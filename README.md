@@ -28,5 +28,5 @@ it can be download from kaggle: https://datarepository.wolframcloud.com/resource
 
 <p align="left">
 <img src="https://github.com/chacoff/EmotionsDetector/blob/main/models/faces48x48.png" width="256">
-<img src="https://github.com/chacoff/EmotionsDetector/blob/main/models/databrief.png" width="512">
+<img src="https://github.com/chacoff/EmotionsDetector/blob/main/models/databrief.png" width="480">
 </p>
