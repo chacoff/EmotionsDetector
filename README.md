@@ -23,3 +23,8 @@ $ git clone https://github.com/chacoff/MaskDetector
 **dataset**
 
 it can be download from kaggle: https://datarepository.wolframcloud.com/resources/FER-2013
+
+<p align="left">
+<img src="https://github.com/chacoff/EmotionsDetector/blob/main/models/faces48x48.png" width="256">
+<img src="https://github.com/chacoff/EmotionsDetector/blob/main/models/databrief.png" width="256">
+</p>
