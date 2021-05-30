@@ -4,7 +4,7 @@ import cv2
 from numpy import random, moveaxis
 import os
 import pyautogui
-import imutils
+from win32api import GetSystemMetrics
 
 
 def load_model(path):
@@ -36,40 +36,52 @@ def predict_emotion(gray, x, y, w, h):
 
 
 if __name__ == '__main__':
-	# ------ SETTINGS
-	CAM = True  # if True, the webcam will be proposed, if False, the primary screen will be processed
-	VID = 'vidk.mp4'  # 0 for webcam or video address, example 'vidk.mp4'
-	REC = False  # to record the webcam or the screen
+
+	# ------ SETTINGS ------ #
+	CAM = False  # if True, the webcam/video will be capture if False, the primary screen will be capture
+	VID = 0  # 0 for webcam or video address, example 'vidk.mp4'
+	REC = True  # to record the webcam or the screen, must be True for single video processing
 	SingleChannel = True  # currently only supporting 1 channel
 
-	# ------ face detector
+	# face detector
 	protoPath = os.path.join('models', 'deploy.prototxt')  # face detector based on a res net
 	modelPath = os.path.join('models', 'res10_300x300_ssd_iter_140000.caffemodel')  # face detector
 	detector = cv2.dnn.readNetFromCaffe(protoPath, modelPath)
-	threshold = 0.50  # to filter out week face detections
+	threshold = 0.45  # to filter out week face detections
+	px_filter = 10  # size filter to ensure a sufficiently large face
 
-	# ------ emotions classifier
+	# emotions classifier
 	path = "models/jup03/"
 	model = load_model(path)
 	emotion_dict = {0: "Angry", 1: "Disgust", 2: "Fear", 3: "Happy", 4: "Sad", 5: "Surprise", 6: "Neutral"}
+	# ------ SETTINGS ------ #
 
 	random.seed(8)
-	color_cycle = [[random.randint(10, 255) for _ in range(3)] for _ in range(5)]
+	color_cycle = [[random.randint(10, 255) for _ in range(3)] for _ in range(50)]
 
 	if CAM:
 		webcam = cv2.VideoCapture(VID)
-	if REC is True:
-		out = cv2.VideoWriter('rec_exp5.avi', cv2.VideoWriter_fourcc(*'XVID'), 24, (1920, 1080))
+		f3 = int(webcam.get(3))  # width
+		f4 = int(webcam.get(4))  # height
+	else:
+		f3 = int(GetSystemMetrics(0))  # width
+		f4 = int(GetSystemMetrics(1))  # height
 
-	while True:
+	if REC is True:
+		out = cv2.VideoWriter('jup03_kv.avi', cv2.VideoWriter_fourcc(*'XVID'), 12, (f3, f4))
+
+	while True:  # webcam.isOpened():
 		if CAM:
 			ret, frame = webcam.read()
 		else:
 			img = pyautogui.screenshot()
 			frame = np.array(img)
 			frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+			ret = True
 
-		frame = imutils.resize(frame, width=600)
+		if ret is False:
+			break
+
 		frame = cv2.normalize(frame, None, 10, 230, cv2.NORM_MINMAX)  # normalize
 		(h_frame, w_frame) = frame.shape[:2]
 
@@ -95,7 +107,7 @@ if __name__ == '__main__':
 				(fH, fW) = face.shape[:2]
 				# cv2.imwrite('text1.jpg', face)
 
-				if fW < 20 or fH < 20:  # ensure the face width and height are sufficiently large
+				if fW < px_filter or fH < px_filter:  # ensure the face width and height are sufficiently large
 					continue
 
 				if SingleChannel:
