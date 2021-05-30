@@ -41,3 +41,11 @@ it can be download from kaggle: https://datarepository.wolframcloud.com/resource
 <img src="https://github.com/chacoff/EmotionsDetector/blob/main/models/faces48x48.png" width="256">
 <img src="https://github.com/chacoff/EmotionsDetector/blob/main/models/databrief.png" width="360">
 </p>
+
+
+**training**
+```
+$ jupyter notebook notebook-dir='c:/users/USER/'
+>> training_SatAI_emotions1.ipynb
+```
+
