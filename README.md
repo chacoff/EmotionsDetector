@@ -57,4 +57,6 @@ Emotions_UI_caffeScreen.py
 
 With the capability of capturing webcams, videos and also capturing your screen. To come is capturing IPcam(s).
 
-
+<p align="left">
+<img src="https://github.com/chacoff/EmotionsDetector/blob/main/models/Wfaces-1.gif" width="600">
+</p>
