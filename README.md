@@ -55,7 +55,7 @@ $ jupyter notebook notebook-dir='c:/users/USER/'
 Emotions_UI_caffeScreen.py
 ```
 
-With the capability of capturing webcams, videos and also capturing your capture your screen (IPcam(s) on the to-do list).
+With the capability of capturing and recording webcams, videos and your screen. (IPcam(s) on the to-do list).
 
 <p align="left">
 <img src="https://github.com/chacoff/EmotionsDetector/blob/main/models/Wfaces-1.gif" width="600">
