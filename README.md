@@ -42,17 +42,20 @@ it can be download from kaggle: https://datarepository.wolframcloud.com/resource
 <img src="https://github.com/chacoff/EmotionsDetector/blob/main/models/databrief.png" width="360">
 </p>
 
+Originally, It has 7 classes, but we dropped to 4 classes:
+
+
 
 **training**
 ```
 $ jupyter notebook notebook-dir='c:/users/USER/'
->> training_SatAI_emotions1.ipynb
+>> training_SatAI_emotions1_4classes.ipynb
 ```
 
 
 **UI**
 ```
-Emotions_UI_caffeScreen.py
+Emotions_UI_d0.89.py
 ```
 
 With the capability of capturing and recording webcams, videos and your screen. (IPcam(s) on the to-do list).
