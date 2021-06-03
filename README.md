@@ -55,8 +55,10 @@ $ jupyter notebook notebook-dir='c:/users/USER/'
 >> training_SatAI_emotions1_4classes.ipynb
 ```
 
+The model is on the repository compressed and splitted: _models/jup06_
+
 <p align="left">
-<img src="https://github.com/chacoff/EmotionsDetector/blob/main/models/jup6_training.png" width="420">
+<img src="https://github.com/chacoff/EmotionsDetector/blob/main/models/jup6_training.png" width="520">
 </p>
 
 
