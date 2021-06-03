@@ -42,8 +42,11 @@ it can be download from kaggle: https://datarepository.wolframcloud.com/resource
 <img src="https://github.com/chacoff/EmotionsDetector/blob/main/models/databrief.png" width="360">
 </p>
 
-Originally, It has 7 classes, but we dropped to 4 classes:
+Originally, It has 7 classes, but we dropped to 4 classes by grouping the nearest emotions:
 
+<p align="left">
+<img src="https://github.com/chacoff/EmotionsDetector/blob/main/models/dataset_4classes.png" width="360">
+</p>
 
 
 **training**
