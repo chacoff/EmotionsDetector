@@ -42,7 +42,7 @@ it can be download from kaggle: https://datarepository.wolframcloud.com/resource
 <img src="https://github.com/chacoff/EmotionsDetector/blob/main/models/databrief.png" width="360">
 </p>
 
-Originally, It has 7 classes, but we dropped to 4 classes by grouping the nearest emotions:
+Originally, It has 7 classes, but we dropped it to 4 classes by grouping the nearest emotions:
 
 <p align="left">
 <img src="https://github.com/chacoff/EmotionsDetector/blob/main/models/dataset_4classes.png" width="360">
@@ -54,6 +54,10 @@ Originally, It has 7 classes, but we dropped to 4 classes by grouping the neares
 $ jupyter notebook notebook-dir='c:/users/USER/'
 >> training_SatAI_emotions1_4classes.ipynb
 ```
+
+<p align="left">
+<img src="https://github.com/chacoff/EmotionsDetector/blob/main/models/jup6_training.png" width="420">
+</p>
 
 
 **UI**
