@@ -7,7 +7,7 @@ Emotions Detector based on FER2013 dataset
 ```
 $ conda activate <env>
 $ conda install pip
-$ pip freeze > requirements.txt
+$ pip install -r requirements.txt
 ```
 **PIP enviroment**
 ```
