@@ -70,12 +70,12 @@ With the capability of capturing and recording webcams, videos and your screen. 
 Moody.py
 ```
 <p align="left">
-<img src="https://github.com/chacoff/EmotionsDetector/blob/readme/readme/moody.png" width="600">
+<img src="https://github.com/chacoff/EmotionsDetector/blob/main/readme/moodyUI.png" width="600">
 </p>
 
 ```
 Emotions_UI_final.py
 ```
 <p align="left">
-<img src="https://github.com/chacoff/EmotionsDetector/blob/readme/readme/Wfaces-1.gif" width="600">
+<img src="https://github.com/chacoff/EmotionsDetector/blob/main/readme/Wfaces-1.gif" width="600">
 </p>
