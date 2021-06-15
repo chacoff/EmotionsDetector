@@ -67,7 +67,7 @@ The model is on the repository compressed and splitted: _models/jup09_
 With the capability of capturing and recording webcams, videos and your screen. (IPcam(s) on the to-do list).
 
 ```
-Moody.py
+MoodyGUI.py
 ```
 <p align="left">
 <img src="https://github.com/chacoff/EmotionsDetector/blob/main/readme/moodyUI.png" width="600">
