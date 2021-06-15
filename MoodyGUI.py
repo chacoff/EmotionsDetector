@@ -21,13 +21,13 @@ if __name__ == '__main__':
     # ---------- LAYOUT ---------- #
     layout = [[sg.Image(filename='', key='image')],
 
-        [sg.Text('Face Detector', size=(14, 1), auto_size_text=False, justification='left'),
-         sg.InputText('', size=(14, 1), enable_events=True, key="-FACE_MOD-"),
-         sg.FolderBrowse(size=(10, 1), font='Helvetica 8')],
+        # [sg.Text('Face Detector', size=(14, 1), auto_size_text=False, justification='left'),
+        #  sg.InputText('', size=(14, 1), enable_events=True, key="-FACE_MOD-"),
+        #  sg.FolderBrowse(size=(10, 1), font='Helvetica 8')],
 
-        [sg.Text('Emotion\'s model', size=(14, 1), auto_size_text=False, justification='left'),
-         sg.InputText('', size=(14, 1), enable_events=True, key="-EMO_MOD-"),
-         sg.FolderBrowse(size=(10, 1), font='Helvetica 8')],
+        # [sg.Text('Emotion\'s model', size=(14, 1), auto_size_text=False, justification='left'),
+        #  sg.InputText('', size=(14, 1), enable_events=True, key="-EMO_MOD-"),
+        # sg.FolderBrowse(size=(10, 1), font='Helvetica 8')],
 
         [sg.Button('Process', size=(10, 1), font='Helvetica 8'),
          sg.Button('Stop', size=(10, 1), font='Helvetica 8'),
@@ -38,10 +38,11 @@ if __name__ == '__main__':
     # ---------- LAYOUT ---------- #
 
     # ---------- PARAMETERS SETTINGS ---------- #
-    CAM = True  # if True, the webcam/video will be capture if False, the primary screen will be capture
+    CAM = False  # if True, the webcam/video will be capture if False, the primary screen will be capture
     VID = 0  # 0 for webcam or video address, example 'vidk.mp4'
     REC = False  # to record the webcam or the screen, must be True for single video processing
     REC_file = 'jup06_4classes.avi'
+    FACTOR = 2.5  # factor to reduce the size of the screen in within the UI
     SingleChannel = True  # currently only supporting 1 channel
 
     # face detector
@@ -68,8 +69,8 @@ if __name__ == '__main__':
         f4 = int(webcam.get(4))  # height
         recording = False
     else:
-        f3 = int(GetSystemMetrics(0))  # width
-        f4 = int(GetSystemMetrics(1))  # height
+        f3 = int(GetSystemMetrics(0) / FACTOR)  # width
+        f4 = int(GetSystemMetrics(1) / FACTOR)  # height
         recording = False
 
     if REC is True:
@@ -94,8 +95,9 @@ if __name__ == '__main__':
             if CAM:
                 ret, frame = webcam.read()
             else:
-                img = pyautogui.screenshot()
+                img = pyautogui.screenshot()  # PIL
                 frame = np.array(img)
+                frame = cv2.resize(frame, (f3, f4))
                 frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
                 ret = True
 
