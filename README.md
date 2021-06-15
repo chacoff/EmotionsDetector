@@ -45,7 +45,7 @@ it can be download from kaggle: https://datarepository.wolframcloud.com/resource
 Originally, It has 7 classes, but we dropped it to 4 classes by grouping the nearest emotions:
 
 <p align="left">
-<img src="https://github.com/chacoff/EmotionsDetector/blob/main/models/dataset_4classes.png" width="360">
+<img src="https://github.com/chacoff/EmotionsDetector/blob/main/models/jup09_data.png" width="360">
 </p>
 
 
@@ -58,7 +58,7 @@ $ jupyter notebook notebook-dir='c:/users/USER/'
 The model is on the repository compressed and splitted: _models/jup06_
 
 <p align="left">
-<img src="https://github.com/chacoff/EmotionsDetector/blob/main/models/jup6_training.png" width="520">
+<img src="https://github.com/chacoff/EmotionsDetector/blob/main/models/jup09_metrics.png" width="520">
 </p>
 
 
