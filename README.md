@@ -42,7 +42,7 @@ it can be download from kaggle: https://datarepository.wolframcloud.com/resource
 <img src="https://github.com/chacoff/EmotionsDetector/blob/main/models/databrief.png" width="360">
 </p>
 
-Originally, It has 7 classes, but we dropped it to 4 classes by grouping the nearest emotions:
+Originally, It has 7 classes, but we dropped it to 3 classes by grouping the nearest emotions:
 
 <p align="left">
 <img src="https://github.com/chacoff/EmotionsDetector/blob/main/models/jup09_data.png" width="360">
@@ -52,19 +52,19 @@ Originally, It has 7 classes, but we dropped it to 4 classes by grouping the nea
 **training**
 ```
 $ jupyter notebook notebook-dir='c:/users/USER/'
->> training_SatAI_emotions1_4classes.ipynb
+>> training_SatAI_emotions1_3classes.ipynb
 ```
 
-The model is on the repository compressed and splitted: _models/jup06_
+The model is on the repository compressed and splitted: _models/jup09_
 
 <p align="left">
-<img src="https://github.com/chacoff/EmotionsDetector/blob/main/models/jup09_metrics.png" width="520">
+<img src="https://github.com/chacoff/EmotionsDetector/blob/main/models/jup09_metrics.jpg" width="520">
 </p>
 
 
 **UI**
 ```
-Emotions_UI_d0.89.py
+Moody.py
 ```
 
 With the capability of capturing and recording webcams, videos and your screen. (IPcam(s) on the to-do list).
