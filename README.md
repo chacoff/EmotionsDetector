@@ -38,14 +38,14 @@ $ git clone https://github.com/chacoff/EmotionsDetector
 it can be download from kaggle: https://datarepository.wolframcloud.com/resources/FER-2013
 
 <p align="left">
-<img src="https://github.com/chacoff/EmotionsDetector/blob/main/models/faces48x48.png" width="256">
-<img src="https://github.com/chacoff/EmotionsDetector/blob/main/models/databrief.png" width="360">
+<img src="https://github.com/chacoff/EmotionsDetector/blob/main/readme/faces48x48.png" width="256">
+<img src="https://github.com/chacoff/EmotionsDetector/blob/main/readme/databrief.png" width="360">
 </p>
 
 Originally, It has 7 classes, but we dropped it to 3 classes by grouping the nearest emotions:
 
 <p align="left">
-<img src="https://github.com/chacoff/EmotionsDetector/blob/main/models/jup09_data.png" width="360">
+<img src="https://github.com/chacoff/EmotionsDetector/blob/main/readme/jup09_data.png" width="360">
 </p>
 
 
@@ -58,17 +58,24 @@ $ jupyter notebook notebook-dir='c:/users/USER/'
 The model is on the repository compressed and splitted: _models/jup09_
 
 <p align="left">
-<img src="https://github.com/chacoff/EmotionsDetector/blob/main/models/jup09_metrics.jpg" width="520">
+<img src="https://github.com/chacoff/EmotionsDetector/blob/main/readme/jup09_metrics.jpg" width="520">
 </p>
 
 
 **UI**
-```
-Moody.py
-```
 
 With the capability of capturing and recording webcams, videos and your screen. (IPcam(s) on the to-do list).
 
+```
+Moody.py
+```
 <p align="left">
-<img src="https://github.com/chacoff/EmotionsDetector/blob/main/models/Wfaces-1.gif" width="600">
+<img src="https://github.com/chacoff/EmotionsDetector/blob/readme/readme/moody.png" width="600">
+</p>
+
+```
+Emotions_UI_final.py
+```
+<p align="left">
+<img src="https://github.com/chacoff/EmotionsDetector/blob/readme/readme/Wfaces-1.gif" width="600">
 </p>
