@@ -74,7 +74,7 @@ MoodyGUI.py
 <img src="https://github.com/chacoff/EmotionsDetector/blob/main/readme/moodyUI.png" width="600">
 </p>
 
-**MoodyGUI.py parameters.xml**
+**MoodyGUI.py params.xml**
 ```xml
 <item name="theme">Reddit</item> <!-- cool themes -->
 <item name="halo">0.85</item> <!-- transparency effect -->
@@ -93,8 +93,9 @@ MoodyGUI.py
 <item name="fps_xml">12</item> <!-- fps for recording -->
 ```
 
+If you want to use a version without any UI. It does the same, but without any interface.
 
-```
+```python
 Emotions_UI_final.py
 ```
 <p align="left">
