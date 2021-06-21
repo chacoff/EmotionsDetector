@@ -66,7 +66,15 @@ The model is on the repository compressed and splitted: _models/jup09_
 
 With the capability of capturing and recording webcams, videos and your screen. (IPcam(s) on the to-do list).
 
-**parameters**
+```python
+MoodyGUI.py
+```
+
+<p align="left">
+<img src="https://github.com/chacoff/EmotionsDetector/blob/main/readme/moodyUI.png" width="600">
+</p>
+
+**MoodyGUI.py parameters**
 ```xml
 		<item name="theme">Reddit</item> <!-- cool themes -->
 		<item name="halo">0.85</item> <!-- transparency effect -->
@@ -85,12 +93,6 @@ With the capability of capturing and recording webcams, videos and your screen. 
 		<item name="fps_xml">12</item> <!-- fps for recording -->
 ```
 
-```
-MoodyGUI.py
-```
-<p align="left">
-<img src="https://github.com/chacoff/EmotionsDetector/blob/main/readme/moodyUI.png" width="600">
-</p>
 
 ```
 Emotions_UI_final.py
