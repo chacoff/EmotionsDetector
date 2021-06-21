@@ -66,6 +66,25 @@ The model is on the repository compressed and splitted: _models/jup09_
 
 With the capability of capturing and recording webcams, videos and your screen. (IPcam(s) on the to-do list).
 
+**parameters**
+```xml
+		<item name="theme">Reddit</item> <!-- cool themes -->
+		<item name="halo">0.85</item> <!-- transparency effect -->
+    <item name="CAM">NO</item> <!-- if YES the webcam/video will be capture, if NO, the screen-->
+		<item name="VID">0</item> <!-- 0 for webcam, or video file address -->
+		<item name="REC">YES</item> <!-- YES/NO to record webcam or the screen -->
+		<item name="REC_file">jup09_3classes_1.avi</item> <!-- name of the file if the recording option is active -->
+		<item name="FACTOR">2</item> <!-- factor to reduce the screen size to fit into the viewer -->
+		
+		<item name="modelsPath">models</item> <!-- -->
+		<item name="protopath">deploy.prototxt</item> <!-- face detector proto file -->
+		<item name="modelpath">res10_300x300_ssd_iter_140000.caffemodel</item> <!-- face detector -->
+		<item name="threshold">0.45</item> <!-- to filter out weak face detections -->
+		
+		<item name="emotionsPath">jup09\</item> <!-- emotions classifier -->
+		<item name="fps_xml">12</item> <!-- fps for recording -->
+```
+
 ```
 MoodyGUI.py
 ```
