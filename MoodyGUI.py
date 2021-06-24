@@ -1,4 +1,5 @@
 import PySimpleGUI as sg
+from tkinter import ttk
 from tensorflow.keras.models import model_from_json
 import numpy as np
 import cv2
@@ -17,12 +18,6 @@ def standbyVideo(f3, f4):
     window['image'].update(data=imgbytes)
 
 
-def resource_path(relative_path):
-    if hasattr(sys, '_MEIPASS'):
-        return os.path.join(sys._MEIPASS, relative_path)
-    return os.path.join(os.path.abspath("."), relative_path)
-
-
 def list_parameters(l):
     list_param = []
     for i, data in enumerate(l):
@@ -30,109 +25,34 @@ def list_parameters(l):
     return list_param
 
 
-def UIlayout_A():
-    sg.theme('Reddit')  # THEME currently not implemented
-
-    menu_def = [['&Help', ['&About', '&Exit']],
-                ]
-
-    layout = [
-        [sg.MenubarCustom(menu_def, pad=(0, 0), k='-CUST MENUBAR-')],
-        [sg.Image(filename='', key='image')],
-        [sg.Button('', image_data=image_check,
-                   button_color=('white', sg.theme_background_color()),
-                   border_width=0, key='Process'),
-         sg.Button('', image_data=image_remove,
-                   button_color=('white', sg.theme_background_color()),
-                   border_width=0, key='Stop'),
-         sg.Button('', image_data=image_settings,
-                   button_color=('white', sg.theme_background_color()),
-                   border_width=0, key='Parameters'),
-         ]
-    ]
-
-    # create the window and show it without the plot
-    window = sg.Window('Moody.AI', layout,
-                       location=(800, 400),
-                       alpha_channel=HALO,
-                       use_custom_titlebar=True,
-                       titlebar_icon=mainWindowIcon_32,
-                       keep_on_top=True,
-                       resizable=True,
-                       )
-    return window
-
-
-def UIlayout_B(PARAMS):
-
-    lyt = [
-        [sg.Text('Detection:', font=("Helvetica", 12))],
-        [sg.Text('Detector Threshold', size=(15, 1)), sg.Combo(values=[round(x/100, 3) for x in range(10, 105, 5)], default_value=PARAMS[10], key='thrs', size=(9, 1))],
-        [sg.Text('Models Folder', size=(15, 1)), sg.InputText(PARAMS[7], key='mod', size=(11, 1))],
-        [sg.Text('Model Name', size=(15, 1)), sg.InputText(PARAMS[11], key='emoc', size=(11, 1))],
-
-
-        [sg.Text('Options:', font=("Helvetica", 12))],
-        [sg.Text('Webcam', size=(15, 1)), sg.Combo(values=['YES', 'NO'], default_value=PARAMS[2], key='webcam', size=(9, 1))],
-        [sg.Text('Webcam Source', size=(15, 1)), sg.Combo(values=[y for y in range(0, 6, 1)], default_value=PARAMS[3], key='websource', size=(9, 1))],
-        [sg.Text('Recording', size=(15, 1)), sg.Combo(values=['YES', 'NO'], default_value=PARAMS[4], key='rec', size=(9, 1))],
-        [sg.Text('Recording file', size=(15, 1)), sg.InputText(PARAMS[5], key='avifile', size=(11, 1))],
-        [sg.Text('FPS', size=(15, 1)), sg.Combo(values=[y for y in range(8, 50, 1)], default_value=PARAMS[12], key='fps_rec', size=(9, 1))],
-
-        [sg.Text('Misc:', font=("Helvetica", 12))],
-        [sg.Text('UI Transparency', size=(15, 1)), sg.Combo(values=[round(x/100, 3) for x in range(11, 105, 5)], default_value=PARAMS[1], key='halo', size=(9, 1))],
-        [sg.Button('Save'), sg.Button('Exit')]
-           ]
-
-    win = sg.Window('Parameters', lyt,
-                    no_titlebar=False,
-                    grab_anywhere=False,
-                    keep_on_top=True,
-                    icon=image_settings)
-
-    while True:
-        eve, val = win.read()
-        if eve in (sg.WINDOW_CLOSED, 'Exit'):
-            break
-        elif eve == 'Save':
-            continue
-
-    win.close()
-
-
 def main_XML():
     tree = ET.parse(resource_path('params.xml'))
     root = tree.getroot()
     # fullXML = ET.tostring(root, encoding='utf8').decode('utf8')
     Xlist = [t.text for t in root.iter('item')]  # list of the parameters
-    PARAMS = list_parameters(Xlist)
+    PARAMS = list_parameters(Xlist)  # list with the parameters
 
-    THEME = root[0][0].text
-    HALO = root[0][1].text
-    CAM = True if root[0][2].text == 'YES' else False  # if True, the webcam/video will be capture if False, the primary screen will be capture
-    VID = root[0][3].text  # 0 for webcam or video address, example 'vidk.mp4'
-    REC = True if root[0][4].text == 'YES' else False  # to record the webcam or the screen
-    REC_file = root[0][5].text
-    fps_xml = int(root[0][12].text)
-    FACTOR = float(root[0][6].text)  # factor to reduce the size of the screen in within the UI
-
-    # face detector
-    protoPath = os.path.join(root[0][7].text, root[0][8].text)  # face detector based on a res net
-    modelPath = os.path.join(root[0][7].text, root[0][9].text)  # face detector
-    detector = cv2.dnn.readNetFromCaffe(protoPath, modelPath)
-    threshold = float(root[0][10].text)  # to filter out weak face detections
-
-    # emotions classifier
-    emo_model = os.path.join(root[0][7].text, root[0][11].text)
-    model = load_model(emo_model)  # emotions classifier model
-
-    return PARAMS, HALO, CAM, VID, REC, REC_file, fps_xml, FACTOR, detector, threshold, model
+    return PARAMS
 
 
 if __name__ == '__main__':
+
     sg.popup_quick_message('Loading Moody.AI', background_color='white', text_color='red')
-    PARAMS, HALO, CAM, VID, REC, REC_file, fps_xml, FACTOR, detector, threshold, model = main_XML()
-    window = UIlayout_A()
+
+    PARAMS = main_XML()
+    HALO = float(PARAMS[1])
+    CAM = True if PARAMS[2] == 'YES' else False
+    VID = PARAMS[3]
+    REC = True if PARAMS[4] == 'YES' else False
+    REC_file = PARAMS[5]
+    FACTOR = float(PARAMS[6])
+    protoPath = os.path.join(PARAMS[7], PARAMS[8])
+    modelPath = os.path.join(PARAMS[7], PARAMS[9])
+    threshold = float(PARAMS[10])
+    emo_model = os.path.join(PARAMS[7], PARAMS[11])
+    fps_xml = int(PARAMS[12])
+
+    window = UIlayout_A(HALO)
 
     # emotion_dict = {0: "Angry", 1: "Disgust", 2: "Fear", 3: "Happy", 4: "Sad", 5: "Surprise", 6: "Neutral"}
     emotion_dict = {0: "upset",
@@ -161,6 +81,7 @@ if __name__ == '__main__':
 
     # ----- Main Loop -------
     while True:
+
         event, values = window.read(timeout=20)  # pysimpleGUI
         standbyVideo(f3, f4)
 
@@ -168,25 +89,19 @@ if __name__ == '__main__':
             break
 
         elif event == 'About':
-            # window.disappear()
             sg.popup(sg.get_versions(),
                      grab_anywhere=True,
                      keep_on_top=True,
                      icon=mainWindowIcon_32)
-            # window.reappear()
 
         elif event == 'Parameters':
             recording = False
             standbyVideo(f3, f4)
             UIlayout_B(PARAMS)
-            #sg.popup('Parameters',
-            #         *PARAMS,
-            #         no_titlebar = False,
-            #         grab_anywhere=True,
-            #         keep_on_top=True,
-            #         icon=mainWindowIcon_32)
 
         elif event == 'Process':
+            detector = cv2.dnn.readNetFromCaffe(protoPath, modelPath)
+            model = load_model(emo_model)
             recording = True
 
         elif event == 'Stop':

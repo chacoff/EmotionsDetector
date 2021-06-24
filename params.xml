@@ -1,19 +1,19 @@
 <data>
     <items>
-		<item name="theme" id="0">Reddit</item> <!-- cool themes -->
-		<item name="halo" id="1">0.90</item> <!-- transparency effect -->
-        <item name="CAM" id="2">NO</item> <!-- if YES the webcam/video will be capture, if NO, the screen-->
-		<item name="VID" id="3">0</item> <!-- 0 for webcam, or video file address -->
-		<item name="REC" id="4">NO</item> <!-- YES/NO to record webcam or the screen -->
-		<item name="REC_file" id="5">jup09_3cl_1.avi</item> <!-- name of the file if the recording option is active -->
-		<item name="FACTOR" id="6">2</item> <!-- factor to reduce the screen size to fit into the viewer -->
+		<item name="theme" id="0">Reddit</item> 
+		<item name="halo" id="1">0.9</item> 
+        <item name="CAM" id="2">NO</item> 
+		<item name="VID" id="3">0</item> 
+		<item name="REC" id="4">NO</item> 
+		<item name="REC_file" id="5">jup09_3cl.avi</item> 
+		<item name="FACTOR" id="6">1.2</item> 
 		
-		<item name="modelsPath" id="7">models</item> <!-- -->
-		<item name="protopath" id="8">deploy.prototxt</item> <!-- face detector proto file -->
-		<item name="modelpath" id="9">res10_300x300_ssd_iter_140000.caffemodel</item> <!-- face detector -->
-		<item name="threshold" id="10">0.45</item> <!-- to filter out weak face detections -->
+		<item name="modelsPath" id="7">models</item> 
+		<item name="protopath" id="8">deploy.prototxt</item> 
+		<item name="modelpath" id="9">res10_300x300_ssd_iter_140000.caffemodel</item> 
+		<item name="threshold" id="10">0.45</item> 
 		
-		<item name="emotionsPath" id="11">jup09\</item> <!-- emotions classifier -->
-		<item name="fps_xml" id="12">12</item> <!-- fps for recording -->
+		<item name="emotionsPath" id="11">jup09\</item> 
+		<item name="fps_xml" id="12">12</item> 
     </items>
 </data>
