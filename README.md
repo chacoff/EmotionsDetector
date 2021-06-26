@@ -71,8 +71,10 @@ MoodyGUI.py
 ```
 
 <p align="left">
+<img src="https://github.com/chacoff/EmotionsDetector/blob/main/readme/MoodyGUI_v1.0.JPG" width="600">
 <img src="https://github.com/chacoff/EmotionsDetector/blob/main/readme/moodyUI.png" width="600">
 </p>
+
 
 **MoodyGUI.py params.xml**
 ```xml
