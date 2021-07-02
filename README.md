@@ -3,7 +3,7 @@
 Emotions Detector based on FER2013 dataset for the 3rd edition of Saturdays.AI Guadalajara
 
 <p align="left">
-<img src="https://github.com/chacoff/EmotionsDetector/blob/main/readme/caratula.JPG" width="520">
+<img src="https://github.com/chacoff/EmotionsDetector/blob/main/readme/caratula.JPG" width="640">
 </p>
 
 
