@@ -1,4 +1,8 @@
-# EmotionsDetector
+# EmotionsDetector: MOODY.AI
+
+Emotions Detector based on FER2013 dataset for the 3rd edition of Saturdays.AI Guadalajara
+
+**Links**
 
 [Medium Article (SP)](https://medium.com/saturdays-ai/moody-ai-69f81ccdbdea)
 
@@ -6,8 +10,10 @@
 
 [Master document (SP)](https://github.com/chacoff/EmotionsDetector/blob/main/readme/DOCUMENTO_PROYECTOS_SAT_AI_GDL_2021-Equipo%20Rojo.pdf)
 
-Emotions Detector based on FER2013 dataset
 
+
+
+# Install
 
 **Conda enviroment**
 ```
