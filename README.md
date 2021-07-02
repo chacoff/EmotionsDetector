@@ -70,6 +70,12 @@ $ jupyter notebook notebook-dir='c:/users/USER/'
 The model is on the repository compressed and splitted: _models/jup09_
 
 <p align="left">
+<img src="https://github.com/chacoff/EmotionsDetector/blob/main/readme/architecture_alexstyle.JPG" width="520">
+</p>
+
+**network**
+
+<p align="left">
 <img src="https://github.com/chacoff/EmotionsDetector/blob/main/readme/jup09_metrics.jpg" width="520">
 </p>
 
