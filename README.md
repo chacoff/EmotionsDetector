@@ -2,6 +2,11 @@
 
 Emotions Detector based on FER2013 dataset for the 3rd edition of Saturdays.AI Guadalajara
 
+<p align="left">
+<img src="https://github.com/chacoff/EmotionsDetector/blob/main/readme/caratula.JPG" width="360">
+</p>
+
+
 **Links**
 
 [Medium Article (SP)](https://medium.com/saturdays-ai/moody-ai-69f81ccdbdea)
