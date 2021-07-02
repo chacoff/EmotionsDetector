@@ -12,7 +12,6 @@ Emotions Detector based on FER2013 dataset for the 3rd edition of Saturdays.AI G
 
 
 
-
 # Install
 
 **Conda enviroment**
@@ -45,9 +44,9 @@ $ git clone https://github.com/chacoff/EmotionsDetector
 ```
 
 
-**dataset**
+**Dataset**
 
-it can be download from kaggle: https://datarepository.wolframcloud.com/resources/FER-2013
+it can be download from [kaggle](https://datarepository.wolframcloud.com/resources/FER-2013)
 
 <p align="left">
 <img src="https://github.com/chacoff/EmotionsDetector/blob/main/readme/faces48x48.png" width="256">
@@ -61,7 +60,7 @@ Originally, It has 7 classes, but we dropped it to 3 classes by grouping the nea
 </p>
 
 
-**training**
+**Training**
 ```
 $ jupyter notebook notebook-dir='c:/users/USER/'
 >> training_SatAI_emotions1_3classes.ipynb
@@ -74,7 +73,7 @@ The model is on the repository compressed and splitted: _models/jup09_
 </p>
 
 
-**network**
+**Network**
 
 
 <p align="left">
