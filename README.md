@@ -1,6 +1,6 @@
 # EmotionsDetector
 
-Medium Article (SP)(https://medium.com/saturdays-ai/moody-ai-69f81ccdbdea)
+[Medium Article (SP)](https://medium.com/saturdays-ai/moody-ai-69f81ccdbdea)
 
 Emotions Detector based on FER2013 dataset
 
