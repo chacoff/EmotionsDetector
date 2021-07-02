@@ -1,4 +1,4 @@
-# EmotionsDetector: MOODY.AI
+# MOODY.AI
 
 Emotions Detector based on FER2013 dataset for the 3rd edition of Saturdays.AI Guadalajara
 
