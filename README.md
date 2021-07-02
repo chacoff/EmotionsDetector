@@ -1,6 +1,8 @@
 # EmotionsDetector
 
 [Medium Article (SP)](https://medium.com/saturdays-ai/moody-ai-69f81ccdbdea)
+[Power Point presentation (SP)](https://github.com/chacoff/EmotionsDetector/blob/main/readme/Copia_de_Plantilla_Equipo_Rojo_13-06-2021.pdf)
+[Master document (SP)](https://github.com/chacoff/EmotionsDetector/blob/main/readme/DOCUMENTO_PROYECTOS_SAT_AI_GDL_2021-Equipo%20Rojo.pdf)
 
 Emotions Detector based on FER2013 dataset
 
