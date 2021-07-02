@@ -82,7 +82,7 @@ The model is on the repository compressed and splitted: _models/jup09_
 
 
 <p align="left">
-<img src="https://github.com/chacoff/EmotionsDetector/blob/main/readme/architecture_alexstyle.JPG" width="520">
+<img src="https://github.com/chacoff/EmotionsDetector/blob/main/readme/architecture_alexstyle.JPG" width="640">
 </p>
 
 
